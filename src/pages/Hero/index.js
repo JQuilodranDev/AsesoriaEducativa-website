@@ -2,15 +2,13 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './hero.css'
 
-function Hero() {
+function Hero( {
+    lightBg, topLine, lightText, lightTextDesc, 
+    headline, description, buttonLabel, img, alt, imgStart
+}){
     return (
         <>
-            <div className="home-content">
-                <div className="home-text">
-                    <h1> comunidad de profesionales de la educación</h1>
-                    
-                </div>
-            </div>
+                   
         </>
     )
 }

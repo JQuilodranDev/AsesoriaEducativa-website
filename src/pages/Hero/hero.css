@@ -8,3 +8,17 @@
     transform: translate(-50%, -50%);
     width: 90%;
 }
+
+.home-text{
+    width: 500px;
+    margin: 20px;
+}
+
+.home-text h1{
+    font-size: 3.5rem;
+    line-height: 55px;
+    color:#22252e;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 0px;
+}
