@@ -8,7 +8,7 @@ const STYLES = ['btn--primary', 'btn--outline'];
 const SIZES  = ['btn--medium', 'btn--large', 'btn-mobile',
 'btn--wide'];
 
-const COLOR  = ['primary', 'blue']
+const COLOR  = ['primary', 'blue', 'green']
 
 
 export const Button = ({
@@ -29,7 +29,7 @@ export const Button = ({
 
     const checkButtonColor = STYLES.includes(buttonColor)
     ? buttonColor
-    : COLOR[0]
+    : null
 
     return (
         <button className={`btn ${checkButtonStyle} $

@@ -1,9 +1,10 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import { MdFingerprint } from 'react-icons/md'
+import { VscGlobe } from "react-icons/vsc";
 import {  FaBars, FaTimes} from 'react-icons/fa'
 import { Button } from '../../components'
 import './navbar.css'
+import { IconContext} from 'react-icons/lib'
 
 
 function Navbar() {
@@ -23,15 +24,20 @@ function Navbar() {
         }
     }
 
+    useEffect(() => {
+    showButton()
+    }, [])
+
     window.addEventListener('resize',
     showButton)
 
     return (
         <>
-            <div className="navbar">
-                <div className="navbar-container container">
-                    <Link to='/' className="navbar-logo">
-                        <MdFingerprint className='navbar-icon' />
+        <IconContext.Provider value={{ color : '#242424'}}>
+            <section className="main">
+            <nav className="navbar">
+                    <Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
+                    <VscGlobe className='navbar-icon'/>
                         AsesoriaEduc
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>
@@ -39,37 +45,37 @@ function Navbar() {
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className="nav-item">
-                            <Link to='/' className="nav-links">
+                            <Link to='/' className="nav-links" onClick={closeMobileMenu}>
                                 Home
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/team' className="nav-links">
+                            <Link to='/team' className="nav-links" onClick={closeMobileMenu}>
                                 Equipo profesional
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/coaching' className="nav-links">
+                            <Link to='/coaching' className="nav-links" onClick={closeMobileMenu}>
                                 Coaching
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/curses' className="nav-links">
+                            <Link to='/curses' className="nav-links" onClick={closeMobileMenu}>
                                 Diplomados y cursos
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/asesorias' className="nav-links">
+                            <Link to='/asesorias' className="nav-links" onClick={closeMobileMenu}>
                                 Asesorias
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/contact' className="nav-links">
+                            <Link to='/contact' className="nav-links" onClick={closeMobileMenu}>
                                 Contacto
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/resources' className="nav-links">
+                            <Link to='/resources' className="nav-links" onClick={closeMobileMenu}>
                                 Recursos
                             </Link>
                         </li>
@@ -80,7 +86,7 @@ function Navbar() {
                                     </Button>
                                 </Link>
                             ) : (
-                                <Link to='/sign-up' className="btn-link">
+                                <Link to='/sign-up' className="btn-link" onClick={closeMobileMenu}>
                                     <Button buttonStyle='btn--outline'
                                     buttonSize='btn-mobile'>
                                         Registrarse
@@ -89,8 +95,9 @@ function Navbar() {
                             )}
                         </li>
                     </ul>
-                </div>
-            </div>
+            </nav>
+            </section>
+            </IconContext.Provider>
         </>
     )
 }
