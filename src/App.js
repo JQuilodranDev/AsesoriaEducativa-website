@@ -1,23 +1,18 @@
-import React from 'react'
-import Navbar from './pages/Navbar/index'
-import Home from './pages/HomePage/Home';
-import Footer from './pages/Footer/index'
+import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch,
-Route } from 'react-router-dom';
-import Team from './pages/Team/Team';
-import Coaching from 'pages/Coaching/Coaching';
-
+import Home from './components/pages/HomePage/Home';
+import Services from './components/pages/Services/Services';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/pages/Footer/Footer';
 
 function App() {
   return (
     <Router>
-      <Navbar /> 
+      <Navbar />
       <Switch>
-        <Route path='/' exact component={Home}/>
-        <Route path='/team'  component={Team}/>
-        <Route path='/coaching' component={Coaching}/>
-
+        <Route path='/' exact component={Home} />
+        <Route path='/services' component={Services} />
       </Switch>
       <Footer />
     </Router>
